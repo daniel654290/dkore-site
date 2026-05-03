@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DKore — Assistência técnica especializada em celulares e notebooks. Orçamento online, atendimento rápido e garantia nos serviços." />
+  <title>DKore | Assistência Técnica</title>
+
+  <!-- Fontes do Google (carregadas da internet) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Nosso arquivo de estilos -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER / NAVEGAÇÃO
+       A barra fixa no topo com o logo e menu
+  ============================================================ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+
+      <!-- Logo -->
+      <a href="#inicio" class="logo">
+        <span class="logo__dk">DK</span><span class="logo__ore">ORE</span>
+      </a>
+
+      <!-- Menu desktop -->
+      <nav class="nav" id="nav">
+        <a href="#inicio"    class="nav__link">Início</a>
+        <a href="#servicos"  class="nav__link">Serviços</a>
+        <a href="#orcamento" class="nav__link">Orçamento</a>
+        <a href="#garantia"  class="nav__link">Garantia</a>
+        <a href="#contato"   class="nav__link">Contato</a>
+        <!-- Aba Dev — em breve -->
+        <a href="#" class="nav__link nav__link--dev" onclick="showDevModal(event)">
+          Dev <span class="badge">Em Breve</span>
+        </a>
+      </nav>
+
+      <!-- Botão hamburguer (aparece só no celular) -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       HERO — SEÇÃO PRINCIPAL
+       Primeira coisa que o cliente vê
+  ============================================================ -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg-grid"></div>
+    <div class="container hero__inner">
+
+      <div class="hero__content">
+        <p class="hero__eyebrow">// assistência técnica especializada</p>
+        <h1 class="hero__title">
+          Seu dispositivo<br/>
+          nas mãos <span class="highlight">certas</span>
+        </h1>
+        <p class="hero__subtitle">
+          Conserto de celulares e notebooks com rapidez, qualidade e garantia.
+          Orçamento online sem compromisso.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#orcamento" class="btn btn--primary">Fazer Orçamento</a>
+          <a href="https://wa.me/5543998200346" target="_blank" class="btn btn--outline">
+            <!-- Ícone WhatsApp inline SVG -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.859L.054 23.447a.5.5 0 00.609.61l5.7-1.494A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.9 9.9 0 01-5.031-1.373l-.36-.214-3.733.979.998-3.645-.235-.374A9.861 9.861 0 012.1 12C2.1 6.533 6.533 2.1 12 2.1S21.9 6.533 21.9 12 17.467 21.9 12 21.9z"/>
+            </svg>
+            Chamar no WhatsApp
+          </a>
+        </div>
+
+        <!-- Métricas rápidas -->
+        <div class="hero__stats">
+          <div class="stat">
+            <span class="stat__num" data-target="300">0</span><span>+</span>
+            <span class="stat__label">Dispositivos recuperados</span>
+          </div>
+          <div class="stat__divider"></div>
+          <div class="stat">
+            <span class="stat__num">2h</span>
+            <span class="stat__label">Resposta média</span>
+          </div>
+          <div class="stat__divider"></div>
+          <div class="stat">
+            <span class="stat__num">90</span><span>dias</span>
+            <span class="stat__label">De garantia</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Elemento visual direita -->
+      <div class="hero__visual">
+        <div class="device-card">
+          <div class="device-card__hex"></div>
+          <div class="device-card__content">
+            <div class="device-card__icon">📱</div>
+            <p class="device-card__text">Celulares</p>
+          </div>
+        </div>
+        <div class="device-card device-card--offset">
+          <div class="device-card__hex"></div>
+          <div class="device-card__content">
+            <div class="device-card__icon">💻</div>
+            <p class="device-card__text">Notebooks</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SERVIÇOS
+       Cards com cada tipo de serviço oferecido
+  ============================================================ -->
+  <section class="services" id="servicos">
+    <div class="container">
+
+      <div class="section-header">
+        <p class="section-eyebrow">// o que fazemos</p>
+        <h2 class="section-title">Serviços</h2>
+        <p class="section-sub">Diagnóstico gratuito. Serviço garantido.</p>
+      </div>
+
+      <div class="services__grid">
+
+        <!-- Card de serviço — repita este bloco para adicionar mais -->
+        <div class="service-card">
+          <div class="service-card__icon">🖥️</div>
+          <h3 class="service-card__title">Troca de Tela</h3>
+          <p class="service-card__desc">Celulares e notebooks com tela trincada, apagada ou com manchas. Peças de qualidade com garantia.</p>
+          <span class="service-card__price">A partir de R$ 120</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">🔋</div>
+          <h3 class="service-card__title">Troca de Bateria</h3>
+          <p class="service-card__desc">Bateria que não carrega, incha ou dura menos de 2 horas. Resolvemos com peças originais ou compatíveis.</p>
+          <span class="service-card__price">A partir de R$ 80</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">⚡</div>
+          <h3 class="service-card__title">Conector de Carga</h3>
+          <p class="service-card__desc">Celular não carrega ou só carrega em determinada posição? Trocamos o conector com rapidez.</p>
+          <span class="service-card__price">A partir de R$ 70</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">💾</div>
+          <h3 class="service-card__title">Formatação</h3>
+          <p class="service-card__desc">Notebook lento, travando ou com vírus. Formatação completa com reinstalação do sistema e backup.</p>
+          <span class="service-card__price">A partir de R$ 100</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">🔧</div>
+          <h3 class="service-card__title">Não Liga</h3>
+          <p class="service-card__desc">Diagnóstico completo para dispositivos que não ligam. Identificamos e resolvemos o problema na placa.</p>
+          <span class="service-card__price">Consultar</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">🌊</div>
+          <h3 class="service-card__title">Dano por Líquido</h3>
+          <p class="service-card__desc">Celular ou notebook molhado? Atendimento emergencial com limpeza e tratamento anticorrosão.</p>
+          <span class="service-card__price">Consultar</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ORÇAMENTO AUTOMÁTICO
+       Formulário inteligente — o cliente escolhe e recebe estimativa
+  ============================================================ -->
+  <section class="budget" id="orcamento">
+    <div class="container">
+
+      <div class="section-header">
+        <p class="section-eyebrow">// sem compromisso</p>
+        <h2 class="section-title">Orçamento Online</h2>
+        <p class="section-sub">Preencha abaixo e receba uma estimativa na hora.</p>
+      </div>
+
+      <div class="budget__wrapper">
+        <div class="budget__form-area">
+
+          <!-- PASSO 1 — Tipo de dispositivo -->
+          <div class="budget__step" id="step-1">
+            <p class="budget__step-label">01 — Qual é o dispositivo?</p>
+            <div class="budget__options">
+              <button class="opt-btn" data-group="device" data-value="celular" onclick="selectOption(this)">
+                📱 Celular
+              </button>
+              <button class="opt-btn" data-group="device" data-value="notebook" onclick="selectOption(this)">
+                💻 Notebook
+              </button>
+              <button class="opt-btn" data-group="device" data-value="tablet" onclick="selectOption(this)">
+                📟 Tablet
+              </button>
+            </div>
+          </div>
+
+          <!-- PASSO 2 — Marca -->
+          <div class="budget__step hidden" id="step-2">
+            <p class="budget__step-label">02 — Qual a marca?</p>
+            <div class="budget__options" id="brand-options">
+              <!-- Preenchido via JS dependendo do dispositivo -->
+            </div>
+          </div>
+
+          <!-- PASSO 3 — Problema -->
+          <div class="budget__step hidden" id="step-3">
+            <p class="budget__step-label">03 — Qual o problema?</p>
+            <div class="budget__options">
+              <button class="opt-btn" data-group="problem" data-value="tela" onclick="selectOption(this)">🖥️ Tela quebrada</button>
+              <button class="opt-btn" data-group="problem" data-value="bateria" onclick="selectOption(this)">🔋 Bateria</button>
+              <button class="opt-btn" data-group="problem" data-value="carga" onclick="selectOption(this)">⚡ Não carrega</button>
+              <button class="opt-btn" data-group="problem" data-value="liga" onclick="selectOption(this)">❌ Não liga</button>
+              <button class="opt-btn" data-group="problem" data-value="formatacao" onclick="selectOption(this)">💾 Formatação</button>
+              <button class="opt-btn" data-group="problem" data-value="liquido" onclick="selectOption(this)">🌊 Dano por líquido</button>
+              <button class="opt-btn" data-group="problem" data-value="outro" onclick="selectOption(this)">🔧 Outro</button>
+            </div>
+          </div>
+
+          <!-- RESULTADO -->
+          <div class="budget__result hidden" id="budget-result">
+            <div class="result-card">
+              <p class="result-card__label">// estimativa</p>
+              <p class="result-card__price" id="result-price">—</p>
+              <p class="result-card__obs" id="result-obs"></p>
+              <a href="https://wa.me/5543998200346" target="_blank" class="btn btn--primary" id="result-wa">
+                Confirmar pelo WhatsApp
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       GARANTIA / POR QUE ESCOLHER
+  ============================================================ -->
+  <section class="trust" id="garantia">
+    <div class="container">
+
+      <div class="section-header">
+        <p class="section-eyebrow">// nosso compromisso</p>
+        <h2 class="section-title">Por que a DKore?</h2>
+      </div>
+
+      <div class="trust__grid">
+        <div class="trust-item">
+          <span class="trust-item__icon">🛡️</span>
+          <h4>90 dias de garantia</h4>
+          <p>Todo serviço tem garantia de 90 dias. Se der problema, resolvemos sem custo.</p>
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__icon">⚡</span>
+          <h4>Atendimento rápido</h4>
+          <p>Respondemos em até 2 horas. Muitos serviços são entregues no mesmo dia.</p>
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__icon">🔍</span>
+          <h4>Diagnóstico gratuito</h4>
+          <p>Avaliamos seu aparelho sem custo. Você decide se quer prosseguir ou não.</p>
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__icon">📦</span>
+          <h4>Busca e entrega</h4>
+          <p>Buscamos e entregamos seu dispositivo. Não precisa sair de casa.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CONTATO
+  ============================================================ -->
+  <section class="contact" id="contato">
+    <div class="container">
+
+      <div class="section-header">
+        <p class="section-eyebrow">// fale conosco</p>
+        <h2 class="section-title">Contato</h2>
+      </div>
+
+      <div class="contact__grid">
+
+        <div class="contact__info">
+          <div class="contact-item">
+            <span class="contact-item__icon">📱</span>
+            <div>
+              <p class="contact-item__label">WhatsApp</p>
+              <a href="https://wa.me/5543998200346" target="_blank" class="contact-item__value">(43) 99820-0346</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item__icon">📍</span>
+            <div>
+              <p class="contact-item__label">Atendimento</p>
+              <p class="contact-item__value">Londrina, Paraná, Brasil<br/>Busca e entrega disponível</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item__icon">🕐</span>
+            <div>
+              <p class="contact-item__label">Horário</p>
+              <p class="contact-item__value">Seg – Sex: 8h às 18h<br/>Sáb: 8h às 13h</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item__icon">📷</span>
+            <div>
+              <p class="contact-item__label">Instagram</p>
+              <a href="https://instagram.com/dkore" target="_blank" class="contact-item__value">@dkore</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulário de contato — integrado com Formspree -->
+        <!-- As mensagens chegam em contato@dkore.tec.br -->
+        <div class="contact__form-wrap">
+          <form class="contact-form" id="contact-form" action="https://formspree.io/f/xjglgdjp" method="POST">
+
+            <!-- Campo oculto — identifica de onde veio a mensagem -->
+            <input type="hidden" name="_subject" value="Nova mensagem pelo site DKore" />
+
+            <input type="text" name="nome" class="form-input" placeholder="Seu nome" required />
+            <input type="tel"  name="whatsapp" class="form-input" placeholder="WhatsApp com DDD" required />
+            <input type="text" name="aparelho" class="form-input" placeholder="Aparelho e problema" required />
+            <textarea name="mensagem" class="form-input form-input--area" placeholder="Descreva o problema (opcional)" rows="3"></textarea>
+
+            <!-- Botão muda de texto após envio -->
+            <button type="submit" class="btn btn--primary" id="submit-btn" style="width:100%">
+              Enviar Mensagem
+            </button>
+
+            <!-- Mensagem de sucesso — aparece após envio -->
+            <div class="form-success hidden" id="form-success">
+              ✅ Mensagem enviada! Retornaremos em até 2 horas.
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="logo"><span class="logo__dk">DK</span><span class="logo__ore">ORE</span></span>
+      <p class="footer__tagline">Tecnologia com propósito</p>
+      <p class="footer__copy">© 2025 DKore. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       MODAL — DEV EM BREVE
+  ============================================================ -->
+  <div class="modal-overlay hidden" id="dev-modal" onclick="closeDevModal(event)">
+    <div class="modal">
+      <button class="modal__close" onclick="closeDevModal()">✕</button>
+      <p class="modal__eyebrow">// em construção</p>
+      <h3 class="modal__title">DKore Dev</h3>
+      <p class="modal__text">
+        Em breve você poderá contratar serviços de desenvolvimento web, automações e sistemas personalizados diretamente aqui.
+      </p>
+      <div class="modal__badge">🚀 Lançamento em breve</div>
+    </div>
+  </div>
+
+
+  <!-- Botão WhatsApp flutuante (aparece sempre) -->
+  <a href="https://wa.me/5543998200346" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.859L.054 23.447a.5.5 0 00.609.61l5.7-1.494A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.9 9.9 0 01-5.031-1.373l-.36-.214-3.733.979.998-3.645-.235-.374A9.861 9.861 0 012.1 12C2.1 6.533 6.533 2.1 12 2.1S21.9 6.533 21.9 12 17.467 21.9 12 21.9z"/>
+    </svg>
+  </a>
+
+  <!-- Nossos scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
